@@ -1,0 +1,42 @@
+# 🐳 Dockerfile – Definition
+# A Dockerfile is a plain text file that contains a set of instructions for building a Docker image.
+
+# It defines everything needed to set up an environment inside a container — such as:
+
+# base operating system or language (e.g., node, ubuntu)
+
+# dependencies to install
+
+# source code to copy
+
+# build commands to run
+
+# and the default command to start the app
+
+
+# 🔧 In short:
+# A Dockerfile automates the process of creating Docker images.
+
+# Use official Node.js LTS image as base
+FROM node:18
+
+# Set working directory inside the container
+WORKDIR /app
+
+# Copy only package files to install dependencies
+COPY package*.json ./
+
+# Install app dependencies
+RUN npm install
+
+# Copy the rest of the application code
+COPY . .
+
+# Build the app (for production-ready apps like Next.js or React)
+RUN npm run build
+
+# Expose port (default for Next.js/React is 3000)
+EXPOSE 3000
+
+# Start the application
+CMD ["npm", "start"]
