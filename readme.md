@@ -4,14 +4,15 @@
 # IMAGES :
 List all Local images
 
-docker images
-Delete an image
-docker rmi <image_name>
-Remove unused images
-docker image prune
-Build an image from a Dockerfile
-docker build -t <image_name>:<version> . //version is optional
-docker build -t <image_name>:<version> . -no-cache //build without cache
+docker images<br>
+
+Delete an image<br>
+docker rmi <image_name><br>
+Remove unused images<br>
+docker image prune<br>
+Build an image from a Dockerfile<br>
+docker build -t <image_name>:<version> . //version is optional<br>
+docker build -t <image_name>:<version> . -no-cache //build without cache<br>
 
 
 ## CONTAINER :
